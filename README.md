@@ -1,1 +1,1 @@
-After realizing that while you can build a site for free using Emergent AI, the features to actually publish it are locked behind a paywall, I managed to get the `index.html` file by adding a small element to the site—a workaround that ended up getting me banned from Emergent AI! :D
+
