@@ -1,1 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MDC VPN — Open-source VPN client for Android &amp; Windows</title>
+<meta name="description" content="Open-source OpenVPN and WireGuard client for Android and Windows x64. Bring your own .ovpn or .conf profile. No accounts, no telemetry, no bloat." />
+<meta name="theme-color" content="#121417" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MDC VPN" />
+<meta property="og:title" content="MDC VPN — Open-source VPN client for Android &amp; Windows" />
+<meta property="og:description" content="OpenVPN and WireGuard client for Android and Windows x64. Bring your own .ovpn or .conf profile. No accounts, no telemetry, no bloat." />
+<meta property="og:image" content="assets/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="MDC VPN — emerald shield mark on matte anthracite, with the protected status ring" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MDC VPN — Open-source VPN client for Android &amp; Windows" />
+<meta name="twitter:description" content="OpenVPN and WireGuard client for Android and Windows x64. Bring your own .ovpn or .conf profile." />
+<meta name="twitter:image" content="assets/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23121417'/%3E%3Cpath d='M16 6l8 3v7c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V9l8-3z' fill='none' stroke='%2310B981' stroke-width='2'/%3E%3Cpath d='M12.5 16.2l2.6 2.6 4.6-5' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
 
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<!-- ───────────── NAV ───────────── -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="MDC VPN">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 4.5l9 3.4v7.6c0 5.5-3.8 9.4-9 11-5.2-1.6-9-5.5-9-11V7.9l9-3.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M12.2 16.1l2.8 2.8 5-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">MDC&nbsp;VPN</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#architecture" data-i18n="nav.architecture">Architecture &amp; Security</a>
+      <a href="#download" data-i18n="nav.download">Download</a>
+      <a href="https://github.com/MDCforLEGAL/MDC-VPN" target="_blank" rel="noopener noreferrer" class="nav-github">
+        GitHub
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language / Dil">
+        <button type="button" class="lang-btn" data-lang="tr" lang="tr">TR</button>
+        <button type="button" class="lang-btn" data-lang="en" lang="en">EN</button>
+      </div>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ───────────── HERO ───────────── -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="pill-row">
+        <span class="pill">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l5.5 2v4.6c0 3.3-2.3 5.8-5.5 6.7-3.2-.9-5.5-3.4-5.5-6.7V3.5l5.5-2z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          AGPL-3.0
+        </span>
+        <span class="pill" data-i18n="hero.badge.platforms">Android · Windows x64</span>
+      </div>
+
+      <h1 class="hero-title" data-i18n-html="hero.title">OpenVPN &amp; WireGuard, <span class="accent">under your control.</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">A distraction-free, open-source VPN client for Android and Windows x64. Import your own .ovpn or .conf profile, connect in one tap and watch the session in real time. No accounts, no telemetry, no bloat.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/MDCforLEGAL/MDC-VPN/releases/latest" data-download="apk">
+          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0l-4-4m4 4l4-4M5 18v1a2 2 0 002 2h10a2 2 0 002-2v-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero.cta.android">Download for Android (.APK)</span>
+        </a>
+        <a class="btn btn-outline" href="https://github.com/MDCforLEGAL/MDC-VPN/releases/latest" data-download="zip">
+          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0l-4-4m4 4l4-4M5 18v1a2 2 0 002 2h10a2 2 0 002-2v-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero.cta.windows">Download for Windows x64 (.ZIP)</span>
+        </a>
+      </div>
+
+      <a class="link-gh" href="https://github.com/MDCforLEGAL/MDC-VPN" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="hero.cta.github">View source on GitHub</span>
+      </a>
+
+      <dl class="hero-meta">
+        <div><dt data-i18n="hero.meta.protocols">Protocols</dt><dd class="mono">OpenVPN 3 · WireGuard</dd></div>
+        <div><dt data-i18n="hero.meta.requires">Requires</dt><dd class="mono">SDK 24+ · Win x64</dd></div>
+        <div><dt data-i18n="hero.meta.license">License</dt><dd class="mono">AGPL-3.0</dd></div>
+      </dl>
+    </div>
+
+    <!-- Interactive app mockup -->
+    <div class="hero-visual">
+      <div class="device" id="device" data-state="disconnected">
+        <div class="device-notch" aria-hidden="true"></div>
+        <div class="device-head">
+          <span class="device-brand">MDC VPN</span>
+          <span class="chip mono" id="proto-chip">OVPN3</span>
+        </div>
+
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 220 220" aria-hidden="true">
+            <circle class="ring-track" cx="110" cy="110" r="96"></circle>
+            <circle class="ring-progress" id="ring-progress" cx="110" cy="110" r="96"></circle>
+          </svg>
+          <div class="ring-center">
+            <svg class="ring-shield" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M16 4.5l9 3.4v7.6c0 5.5-3.8 9.4-9 11-5.2-1.6-9-5.5-9-11V7.9l9-3.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="M12.2 16.1l2.8 2.8 5-5.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="status-label" id="status-label" aria-live="polite">Not connected</span>
+            <span class="session mono" id="session-timer">00:00:00</span>
+          </div>
+        </div>
+
+        <button class="device-toggle" id="device-toggle" type="button" aria-describedby="mockup-hint">
+          <span id="toggle-label">Connect</span>
+        </button>
+
+        <div class="device-profile">
+          <label for="profile-select" data-i18n="mockup.profile">Server profile</label>
+          <div class="select-wrap">
+            <select id="profile-select" class="mono">
+              <option value="corporate-istanbul.ovpn">corporate-istanbul.ovpn</option>
+              <option value="frankfurt-dc.conf">frankfurt-dc.conf</option>
+              <option value="legacy-datacenter.ovpn">legacy-datacenter.ovpn</option>
+            </select>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v9m0 0l-3.5-3.5M8 12l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="mockup.download">Download</span>
+            </span>
+            <span class="stat-value mono" id="speed-down">0.0 <em>MB/s</em></span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V4m0 0L4.5 7.5M8 4l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="mockup.upload">Upload</span>
+            </span>
+            <span class="stat-value mono" id="speed-up">0.0 <em>MB/s</em></span>
+          </div>
+        </div>
+      </div>
+      <p class="mockup-hint" id="mockup-hint" data-i18n="mockup.hint">Interactive preview — tap the ring to connect.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── ARCHITECTURE / PLATFORMS ───────────── -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="arch.eyebrow">Architecture &amp; Security</span>
+      <h2 data-i18n="arch.title">Two editions. One calm interface.</h2>
+      <p class="section-sub" data-i18n="arch.sub">Each edition talks to a real, native tunnel — no shims, no hidden relays. Profiles and credentials stay on the device, inside the app sandbox.</p>
+    </div>
+
+    <div class="platform-grid">
+      <!-- Android -->
+      <article class="card platform-card">
+        <header class="platform-head">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3 data-i18n="android.title">Android Edition</h3>
+            <p class="platform-meta mono">Kotlin · Material 3 · VpnService</p>
+          </div>
+        </header>
+        <p class="platform-desc" data-i18n="android.desc">Native app built on Kotlin and Material Design 3. The tunnel runs through Android's own VpnService with the OpenVPN 3 core, in a dedicated process.</p>
+        <ul class="feature-list">
+          <li data-i18n="android.f1">OpenVPN 3 (OVPN3) core via libovpn3.so, wired into VpnService.</li>
+          <li data-i18n="android.f2">Persistent foreground notification with a live chronometer and quick disconnect.</li>
+          <li data-i18n="android.f3">State recovery after a process kill — the app verifies the live tunnel, not a cached flag.</li>
+          <li data-i18n="android.f4">Private storage with allowBackup=false; imported profiles never leave the sandbox.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip mono">libovpn3.so</span>
+          <span class="chip mono">minSdk 24</span>
+          <span class="chip mono">AGPL-3.0</span>
+        </div>
+      </article>
+
+      <!-- Windows -->
+      <article class="card platform-card">
+        <header class="platform-head">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 20h6M12 16.5V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3 data-i18n="win.title">Windows x64 Edition</h3>
+            <p class="platform-meta mono">Java / Swing · Portable EXE</p>
+          </div>
+        </header>
+        <p class="platform-desc" data-i18n="win.desc">A lightweight portable desktop app. No installer, no service to manage — double-click MDC-VPN.exe and elevate when Windows asks.</p>
+        <ul class="feature-list">
+          <li data-i18n="win.f1">Bundled OpenVPN Community with the Wintun driver, plus native WireGuard for Windows.</li>
+          <li data-i18n="win.f2">UAC elevation prompt only when the tunnel actually needs it.</li>
+          <li data-i18n="win.f3">Temporary credential files are written for the session and cleaned up on disconnect.</li>
+          <li data-i18n="win.f4">Single portable folder — run it from a USB stick and remove it without a trace.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip mono">Wintun</span>
+          <span class="chip mono">MDC-VPN.exe</span>
+          <span class="chip mono">x64</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="arch-strip">
+      <div class="arch-item">
+        <span class="arch-key mono">:openvpn</span>
+        <p data-i18n="arch.s1">Isolated tunnel process with AIDL status callbacks.</p>
+      </div>
+      <div class="arch-item">
+        <span class="arch-key mono">TRANSPORT_VPN</span>
+        <p data-i18n="arch.s2">Tunnel verified through ConnectivityManager, not UI state.</p>
+      </div>
+      <div class="arch-item">
+        <span class="arch-key mono">45 s</span>
+        <p data-i18n="arch.s3">Hard connect timeout, with the real error surfaced to you.</p>
+      </div>
+      <div class="arch-item">
+        <span class="arch-key mono">0</span>
+        <p data-i18n="arch.s4">Telemetry events, analytics SDKs and third-party trackers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── FEATURES ───────────── -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="feat.eyebrow">Features</span>
+      <h2 data-i18n="feat.title">Everything the tunnel needs. Nothing else.</h2>
+      <p class="section-sub" data-i18n="feat.sub">Built for teams that maintain their own VPN servers and want a client that stays out of the way.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="card feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.2-8 9.5-4.6-1.3-8-4.5-8-9.5V7l8-4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.8 12l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="feat.f1.title">Multi-protocol support</h3>
+        <p data-i18n="feat.f1.desc">Import .ovpn (OpenVPN) and .conf (WireGuard) profiles straight from the file picker. No conversion steps and no cloud upload.</p>
+      </article>
+
+      <article class="card feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="feat.f2.title">One-tap control &amp; live metrics</h3>
+        <p data-i18n="feat.f2.desc">Connect or disconnect instantly, follow the session duration counter and watch upload and download speeds in real time.</p>
+      </article>
+
+      <article class="card feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9h17M7 6.5h.01M10 6.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13.5h8M8 16.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="feat.f3.title">Legacy &amp; enterprise compatibility</h3>
+        <p data-i18n="feat.f3.desc">Full support for BF-CBC, ns-cert-type, tls-remote, LZO, TLS 1.0 and auth-user-pass — old infrastructure keeps working.</p>
+      </article>
+
+      <article class="card feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l8 3v5.2c0 4.7-3.3 7.9-8 9.3-4.7-1.4-8-4.6-8-9.3V6.5l8-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 9v3.5M12 15.5h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="feat.f4.title">Smart fail-safe &amp; diagnostics</h3>
+        <p data-i18n="feat.f4.desc">A 45-second connection timeout with plain-language error diagnostics, instead of a spinner that never resolves.</p>
+      </article>
+
+      <article class="card feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10V7.5a4 4 0 018 0V10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="15.2" r="1.3" fill="currentColor"/></svg></div>
+        <h3 data-i18n="feat.f5.title">Zero-trace local privacy</h3>
+        <p data-i18n="feat.f5.desc">Profiles live in a private app sandbox with allowBackup=false. No telemetry, and temporary auth files are deleted on disconnect.</p>
+      </article>
+
+      <article class="card feature-card">
+        <div class="f-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="feat.f6.title">Fully open source (AGPL-3.0)</h3>
+        <p data-i18n="feat.f6.desc">Transparent automated builds via GitHub Actions — read the source, check the workflow, verify the artifact yourself.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── DOWNLOAD ───────────── -->
+<section class="section" id="download">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="dl.eyebrow">Download</span>
+      <h2 data-i18n="dl.title">Get the build for your platform.</h2>
+      <p class="section-sub" data-i18n="dl.sub">Both editions ship from the same release. Bring your own .ovpn or .conf server profile — MDC VPN does not resell or route your traffic.</p>
+    </div>
+
+    <div class="download-grid">
+      <article class="card download-card">
+        <div class="dl-top">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3>Android</h3>
+            <p class="dl-req mono" data-i18n="dl.android.req">APK · Android 7.0+ (SDK 24+)</p>
+          </div>
+        </div>
+        <ul class="feature-list compact">
+          <li data-i18n="dl.android.i1">Download the .APK from the latest release.</li>
+          <li data-i18n="dl.android.i2">Allow installs from your browser or file manager when prompted.</li>
+          <li data-i18n="dl.android.i3">Import your .ovpn or .conf profile inside the app, then connect.</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="https://github.com/MDCforLEGAL/MDC-VPN/releases/latest" data-download="apk">
+          <span data-i18n="dl.android.cta">Download APK</span>
+          <span class="tag mono" data-release-tag>latest</span>
+        </a>
+      </article>
+
+      <article class="card download-card">
+        <div class="dl-top">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 20h6M12 16.5V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3>Windows x64</h3>
+            <p class="dl-req mono" data-i18n="dl.win.req">Portable ZIP · Windows 10/11</p>
+          </div>
+        </div>
+        <ul class="feature-list compact">
+          <li data-i18n="dl.win.i1">Download and extract the portable .ZIP archive.</li>
+          <li data-i18n="dl.win.i2">Run MDC-VPN.exe and approve the UAC elevation prompt.</li>
+          <li data-i18n="dl.win.i3">Open your .ovpn or .conf profile from the app window.</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="https://github.com/MDCforLEGAL/MDC-VPN/releases/latest" data-download="zip">
+          <span data-i18n="dl.win.cta">Download ZIP</span>
+          <span class="tag mono" data-release-tag>latest</span>
+        </a>
+      </article>
+    </div>
+
+    <div class="dl-note">
+      <p data-i18n-html="dl.note">MDC VPN is a client only. You need an OpenVPN or WireGuard server profile from your own infrastructure or provider — the app does not include a subscription or a default server.</p>
+      <a class="link-gh" href="https://github.com/MDCforLEGAL/MDC-VPN/releases" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="dl.all">Browse all releases</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- Release notes from GitHub -->
+    <section class="changelog" id="changelog" aria-labelledby="changelog-title">
+      <div class="changelog-head">
+        <div>
+          <span class="eyebrow" data-i18n="log.eyebrow">Release notes</span>
+          <h3 id="changelog-title" data-i18n="log.title">Changelog</h3>
+          <p class="changelog-sub" data-i18n="log.sub">Every build ships as a GitHub Release. The newest entries are listed here, pulled straight from the repository.</p>
+        </div>
+        <span class="live-chip mono">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span data-i18n="log.live">Live from GitHub</span>
+        </span>
+      </div>
+
+      <div class="changelog-list" id="changelog-list" aria-live="polite" aria-busy="true">
+        <p class="changelog-state" data-i18n="log.loading">Loading release notes…</p>
+      </div>
+
+      <div class="changelog-foot">
+        <a class="link-gh" href="https://github.com/MDCforLEGAL/MDC-VPN/releases" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="log.all">All releases on GitHub</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────── FOOTER ───────────── -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 4.5l9 3.4v7.6c0 5.5-3.8 9.4-9 11-5.2-1.6-9-5.5-9-11V7.9l9-3.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M12.2 16.1l2.8 2.8 5-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">MDC&nbsp;VPN</span>
+      </a>
+      <p data-i18n="footer.tagline">Open-source OpenVPN and WireGuard client for Android and Windows x64.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/MDCforLEGAL/MDC-VPN" target="_blank" rel="noopener noreferrer" data-i18n="footer.repo">Repository</a>
+      <a href="https://github.com/MDCforLEGAL/MDC-VPN/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">Releases</a>
+      <a href="https://github.com/MDCforLEGAL/MDC-VPN/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.issues">Issues</a>
+      <a href="https://github.com/MDCforLEGAL/MDC-VPN/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="footer.license">AGPL-3.0 License</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span class="mono">© <span id="year">2026</span> MDC VPN</span>
+    <span class="mono" data-i18n="footer.rights">Licensed under AGPL-3.0 · Provided as is, without warranty.</span>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
